@@ -1,15 +1,33 @@
 //Chiedere all’utente di inserire una parola per sapere se è un palindromo oppure no
 
-const userInput = prompt("inserisci una parola")
+const userInputWord = prompt("inserisci una parola")
 
-if(isThisPalindrome(userInput)){
+if(isThisPalindrome(userInputWord)){
     console.log("E' un palindromo")
 }else{
     console.log("non è un palindromo")
 }
 
 
-/**Lets you know if a word is a palindrim
+//L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+const userInputNumber = prompt ("Dammi un numero da 1 a 5")
+const userInputChoice = prompt ("pari o dispari")
+console.log("hai scelto" + userInputNumber)
+// Il Computer randomizza un numero da 1 a 5
+const botRandomNumber = getRandomNumber()
+    console.log("Numero bot = " + botRandomNumber)
+
+//Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari
+
+let thisRandomSum = getRandomSum(userInputNumber,userInputChoice,botRandomNumber)
+console.log(thisRandomSum)
+
+
+
+
+// FUNCTION//
+
+/**Lets you know if a word is a palindrome
  * 
  * @param wordA word entered by user
  * @returns if it's a palindrome it's true else it's folse
@@ -18,7 +36,7 @@ function isThisPalindrome(wordA){
     let reverse = ""
 
     for( let i=wordA.length; i>=0; i--){
-        reverse = reverse + wordFunction.charAt(i)
+        reverse = reverse + wordA.charAt(i)
         console.log(reverse)   
     }
 
@@ -26,5 +44,32 @@ function isThisPalindrome(wordA){
         return true
     }else{
         return false
+    }
+}
+
+/** From back a random Number between 1 / 5
+ * 
+ * @returns  random Number 1/ 5
+ */
+function getRandomNumber(){
+    let randomNumber= Math.floor(Math.random()* (5-1+1+1))
+    return randomNumber
+}
+
+/**Sum two value and return if there is 
+ * 
+ * @param userNumber choose a number from 1 to 5 
+ * @param userChoice choose even or odd
+ * @param botNumber random number by bot 
+ */
+function getRandomSum(userNumber,userChoice,botNumber){
+    let randomSum = parseInt(botNumber) + parseInt(userNumber)
+    console.log(randomSum)
+    if((randomSum % 2 == 0 ) && (userChoice="pari")){
+        return "hai vinto"
+    }else if((randomSum % 2 != 0) && (userChoice="dispari")){
+        return "hai vinto"
+    }else{
+        return "hai perso"
     }
 }
