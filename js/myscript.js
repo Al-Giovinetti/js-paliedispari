@@ -2,11 +2,13 @@
 
 const userInput = prompt("inserisci una parola")
 
+
+
 function isThisPalindrome(wordFunction){
 
     for( let i=wordFunction.length; i=0; i--){
-        const reverse = ""
-        reverse = reverse +   
+        let reverse = ""
+        reverse = reverse + wordFunction.charAt(i)   
     }
 
     if (wordFunction == reverse){
