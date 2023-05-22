@@ -17,7 +17,7 @@ console.log("hai scelto" + userInputNumber)
 const botRandomNumber = getRandomNumber()
     console.log("Numero bot = " + botRandomNumber)
 
-//Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari
+// Usiamo la funzione per sapere se abbiamo vinto
 
 let thisRandomSum = getRandomSum(userInputNumber,userInputChoice,botRandomNumber)
 console.log(thisRandomSum)
@@ -56,7 +56,7 @@ function getRandomNumber(){
     return randomNumber
 }
 
-/**Sum two value and return if there is 
+/**Sum two values and give the result specifying even or odd 
  * 
  * @param userNumber choose a number from 1 to 5 
  * @param userChoice choose even or odd
@@ -65,9 +65,11 @@ function getRandomNumber(){
 function getRandomSum(userNumber,userChoice,botNumber){
     let randomSum = parseInt(botNumber) + parseInt(userNumber)
     console.log(randomSum)
-    if((randomSum % 2 == 0 ) && (userChoice="pari")){
+    if((randomSum % 2 == 0 ) && (userChoice==="pari")){
+        console.log(userChoice + "pa")
         return "hai vinto"
-    }else if((randomSum % 2 != 0) && (userChoice="dispari")){
+    }else if((randomSum % 2 != 0) && (userChoice==="dispari")){
+        console.log(userChoice + "di")
         return "hai vinto"
     }else{
         return "hai perso"
