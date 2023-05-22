@@ -1,12 +1,16 @@
-//Chiedere all’utente di inserire una parola per sapere se è un palindromo oppure no
+const textPali = document.getElementById("pali-text")
+const btnVerify1 = document.querySelector("button")
+const outputPali = document.querySelector ("p.output")
 
-const userInputWord = prompt("inserisci una parola")
-
-if(isThisPalindrome(userInputWord)){
-    console.log("E' un palindromo")
-}else{
-    console.log("non è un palindromo")
+btnVerify1.addEventListener("click",function(){
+    if(isThisPalindrome(textPali.value)){
+        outputPali.innerHTML=("è un palindromo")
+    }else{
+        outputPali.innerHTML=("non è un palindromo")
+    }
+    textPali.value=""
 }
+)
 
 
 //L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
@@ -52,7 +56,7 @@ function isThisPalindrome(wordA){
  * @returns  random Number 1/ 5
  */
 function getRandomNumber(){
-    let randomNumber= Math.floor(Math.random()* (5-1+1+1))
+    let randomNumber= Math.floor((Math.random()* (5-1+1)+1))
     return randomNumber
 }
 
@@ -66,10 +70,10 @@ function getRandomSum(userNumber,userChoice,botNumber){
     let randomSum = parseInt(botNumber) + parseInt(userNumber)
     console.log(randomSum)
     if((randomSum % 2 == 0 ) && (userChoice==="pari")){
-        console.log(userChoice + "pa")
+        console.log(userChoice)
         return "hai vinto"
     }else if((randomSum % 2 != 0) && (userChoice==="dispari")){
-        console.log(userChoice + "di")
+        console.log(userChoice )
         return "hai vinto"
     }else{
         return "hai perso"
