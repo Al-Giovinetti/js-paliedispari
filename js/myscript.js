@@ -1,17 +1,20 @@
-const textPali = document.getElementById("pali-text")
-const btnVerify1 = document.querySelector("button")
-const outputPali = document.querySelector ("p.output")
+//Ex Palindromo con funzione collegata
+
+const textPali = document.getElementById("pali-text");
+const btnVerify1 = document.querySelector("button");
+const outputPali = document.querySelector ("p.output1");
 
 btnVerify1.addEventListener("click",function(){
     if(isThisPalindrome(textPali.value)){
-        outputPali.innerHTML=("è un palindromo")
+        outputPali.innerHTML=("è un palindromo");
     }else{
-        outputPali.innerHTML=("non è un palindromo")
+        outputPali.innerHTML=("non è un palindromo");
     }
-    textPali.value=""
+    textPali.value="";
 }
 )
 
+//Ex pari o Dispari con funzione collegata
 
 //L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 const userInputNumber = prompt ("Dammi un numero da 1 a 5")
