@@ -42,7 +42,7 @@ console.log(thisRandomSum)
 function isThisPalindrome(wordA){
     let reverse = ""
 
-    for( let i=wordA.length; i>=0; i--){
+    for( let i=wordA.length-1; i>=0; i--){
         reverse = reverse + wordA.charAt(i)
         console.log(reverse)   
     }
